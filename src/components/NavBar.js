@@ -15,7 +15,7 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-lg  bg-transparent" id="navmain">
         <div className="container-fluid">
           <Link className="navbar-brand" id="navh1" to='/' >
-            NoteNest
+            Serene
           </Link>
           <button
             className="navbar-toggler"

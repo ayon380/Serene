@@ -41,7 +41,7 @@ function App() {
           </div>
         </Router>
       </NoteState>
-      <footer>&#169; NoteNest LLC 2022-2023</footer>
+      <footer>&#169; Serene LLC 2022-2023</footer>
     </div>
   );
 }
