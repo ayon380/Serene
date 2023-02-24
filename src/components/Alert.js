@@ -6,7 +6,7 @@ const Alert = (props) => {
     return lower.charAt(0).toUpperCase() + lower.slice(1);
   };
   return (
-    <div style={{ height: "50px","background-color":"antiquewhite" }}>
+    <div style={{ height: "50px","background-color":"rgb(253, 248, 242)" }}>
       {props.alert && (
         <div
           className={`alert alert-${props.alert.type} alert-dismissible fade show`}

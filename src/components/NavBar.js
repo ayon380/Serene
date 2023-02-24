@@ -1,4 +1,5 @@
 import React from "react";
+import img2 from "../images/img3.jpg";
 import { Link,useLocation, useNavigate } from "react-router-dom";
 const NavBar = () => {
   const nav=useNavigate()
@@ -15,7 +16,7 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-lg  bg-transparent" id="navmain">
         <div className="container-fluid">
           <Link className="navbar-brand" id="navh1" to='/' >
-            Serene
+            <img src={img2} alt="logo" id="navimg" />
           </Link>
           <button
             className="navbar-toggler"
@@ -48,6 +49,26 @@ const NavBar = () => {
                   to="/about"
                 >
                   About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link id="navl2"
+                  className={` nav-link ${
+                    location.pathname === "/todo" ? "active" : ""
+                  }`}
+                  to="/todo"
+                >
+                  ToDo
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link id="navl2"
+                  className={` nav-link ${
+                    location.pathname === "/clock" ? "active" : ""
+                  }`}
+                  to="/clock"
+                >
+                  Clock
                 </Link>
               </li>
             </ul>

@@ -44,13 +44,13 @@ html {
 }
 
 #notesmain {
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
   margin-top: 0px;
 }
 
 #home1 {
   margin-top: 0px;
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
 }
 
 #navh1 {
@@ -60,15 +60,15 @@ html {
 }
 
 #navl1 {
-  background-color: #fca650;
+  background-color: rgb(255, 208, 153);
   color: black;
   font-weight: bold;
   border-radius: 18px;
-  border: 2px solid black
+  border: 2px solid rgba(0, 0, 0, 0.548)
 }
 
 #navl1:hover {
-  background-color: #ffc387;
+  background-color: #ffdebe;
 }
 
 #navl2 {
@@ -89,20 +89,31 @@ html {
 
 #landingbg {
   /* width: 100vw; */
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
 }
-
+#landingimg3{
+  margin-left: 600px;
+}
 #navmain {
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
 }
 
 #cont {
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
   height: 100vh;
   margin-top: -20px;
   padding-top: 20px;
 }
-
+#navimg{
+  width: 200px;
+}
+#loginimg3{
+margin-left: 15vw;
+  width: 300px;
+}
+#landingimg3{
+  width: 600px;
+}
 #loginl1 {
   /* text-align: center; */
 
@@ -113,7 +124,7 @@ html {
   /* top: 0;
 bottom: 0; */
   height: 100%;
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
 }
 
 #loginlp1 {
@@ -132,7 +143,7 @@ bottom: 0; */
 }
 
 #loginbtn1 {
-  background-color: #fca650;
+  background-color: rgb(255, 208, 153);
   color: black;
   font-weight: bold;
   border-radius: 18px;
@@ -169,7 +180,7 @@ footer {
   /* top: 0;
 bottom: 0; */
   height: 100%;
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
 }
 
 #nameHelp {
@@ -213,7 +224,7 @@ bottom: 0; */
 }
 
 #signupbtn1 {
-  background-color: #fca650;
+  background-color: rgb(255, 208, 153);
   color: black;
   font-weight: bold;
   border-radius: 18px;
@@ -226,7 +237,7 @@ bottom: 0; */
 }
 
 #addnotebtn1 {
-  background-color: #fca650;
+  background-color: rgb(255, 208, 153);
   color: black;
   font-weight: bold;
   border-radius: 18px;
@@ -244,13 +255,13 @@ bottom: 0; */
 }
 
 #home1 {
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
 }
 
 #noteitemmain {
-  background-color: rgb(255, 222, 178);
+  background-color: rgb(252, 228, 197);
   border-radius: 18px;
-  border: 2px solid black;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 #addnotep1 {
@@ -258,7 +269,7 @@ bottom: 0; */
 }
 
 #notesmodal {
-  background-color: antiquewhite;
+  background-color: rgb(253, 248, 242);
 }
 
 #exampleModalLabel {
@@ -281,7 +292,7 @@ bottom: 0; */
 }
 
 #notesbtn {
-  background-color: #fca650;
+  background-color: rgb(255, 208, 153);
   color: black;
   font-weight: bold;
   border-radius: 18px;
@@ -313,3 +324,27 @@ bottom: 0; */
   color: black;
 }
 
+.intro {
+  height: 1000px;
+  background: url("images/img.jpg") center no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+}
+
+.intro h1 {
+  font-size: 200px;
+  padding-top: 100px;
+  padding-left: 2%;
+  color: black;
+}
+
+.intro p {
+  font-size: 30px;
+  padding-top: 30px;
+  padding-right: 70%;
+  padding-left: 2%;
+  color: black;
+}
+.clock1{
+  margin-left: 40%;
+}

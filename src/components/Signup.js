@@ -36,7 +36,7 @@ const Signup = (props) => {
   };
   return (
     <div>
-      <p id="signupp1">Sign Up to Use NoteNest Today</p>
+      <p id="signupp1">Sign Up to Use Serene Today</p>
       <form onSubmit={handleSubmit} id="signupf1">
         <div className="mb-3">
           <label htmlFor="Name" className="form-label">

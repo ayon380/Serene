@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import img3 from "../images/img3.jpg";
 const Login = (props) => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -32,7 +32,8 @@ const Login = (props) => {
   };
   return (
     <div >
-      <p id="loginlp1">Login to Continue to </p><p id="loginlp2">NoteNest</p>
+      <p id="loginlp1">Login to Continue to </p>
+      <img src={img3} alt="img3" id="loginimg3" />
       <form id="loginl1" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
@@ -47,9 +48,6 @@ const Login = (props) => {
             name="email"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
@@ -63,9 +61,6 @@ const Login = (props) => {
             name="password"
             id="password"
           />
-           <div id="passwordHelp" className="form-text">
-            Use a Strong Password for better Security
-          </div>
         </div>
 
         <button type="submit" id="loginbtn1"className="btn btn-primary">

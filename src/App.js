@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import React from "react";
 import Signup from "./components/Signup";
 import Landing from "./components/Landing";
+import Todo from "./components/Todo";
+import Clock from "./components/Clock";
 function App() {
   //eslint-disable-next-line
   const [alert, setAlert] = React.useState(null);
@@ -29,10 +31,12 @@ function App() {
           <Alert alert={alert} />
           <div id="cont">
             <Routes>
-            <Route path="/" element={<Landing showAlert={showAlert} />} />
+              <Route path="/" element={<Landing showAlert={showAlert} />} />
               <Route path="/home" element={<Home showAlert={showAlert} />} />
               <Route path="/About" element={<About showAlert={showAlert} />} />
               <Route path="/login" element={<Login showAlert={showAlert} />} />
+              <Route path="/todo" element={<Todo showAlert={showAlert} />} />
+              <Route path="/clock" element={<Clock showAlert={showAlert} />} />
               <Route
                 path="/signup"
                 element={<Signup showAlert={showAlert} />}

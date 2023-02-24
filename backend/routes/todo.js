@@ -1,45 +1,41 @@
 const express = require("express");
 const router = express.Router();
 const fetchuser = require("../middleware/fetchuser");
-const Note = require("../models/Notes");
+const todo = require("../models/Todo");
 const { body, validationResult } = require("express-validator");
 
-router.get("/fetchallnotes", fetchuser, async (req, res) => {
+router.get("/fetchalltodo", fetchuser, async (req, res) => {
   try {
-    const notes = await Note.find({ user: req.user.id });
-    res.json(notes);
+    const todos = await todo.find({ user: req.user.id });
+    res.json(todos);
   } catch (error) {
     console.error(error.message);
     res.status(500).send("Internal Server Error");
   }
 });
-
 router.post(
-  "/addnote",
+  "/addtodo",
   fetchuser,
   [
-    body("title", "Enter a valid title").isLength({ min: 3 }),
     body("description", "Description must be atleast 5 characters").isLength({
       min: 5,
     }),
   ],
   async (req, res) => {
     try {
-      const { title, description, tag } = req.body;
-
+      const {  description } = req.body;
+      console.log(description);
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
-      const note = new Note({
-        title,
+      const todo = new todo({
         description,
-        tag,
         user: req.user.id,
       });
-      const savedNote = await note.save();
+      const savedtodo = await todo.save();
 
-      res.json(savedNote);
+      res.json(savedtodo);
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error");
@@ -47,44 +43,38 @@ router.post(
   }
 );
 
-router.put("/updatenote/:id", fetchuser, async (req, res) => {
-  const { title, description, tag } = req.body;
-  const newNote = {};
-  if (title) {
-    newNote.title = title;
-  }
+router.put("/updatetodo/:id", fetchuser, async (req, res) => {
+  const {  description } = req.body;
+  const newtodo = {};
   if (description) {
-    newNote.description = description;
+    newtodo.description = description;
   }
-  if (tag) {
-    newNote.tag = tag;
-  }
-  let note = await Note.findById(req.params.id);
-  if (!note) {
+  let todo = await todo.findById(req.params.id);
+  if (!todo) {
     return res.status(404).send("Not Found");
   }
-  if (note.user.toString() !== req.user.id) {
+  if (todo.user.toString() !== req.user.id) {
     return res.status(401).send("Not Allowed");
   }
-  note = await Note.findByIdAndUpdate(
+  todo = await todo.findByIdAndUpdate(
     req.params.id,
-    { $set: newNote },
+    { $set: newtodo },
     { new: true }
   );
-  res.json({ note });
+  res.json({ todo });
 });
 
-router.delete("/deletenote/:id", fetchuser, async (req, res) => {
+router.delete("/deletetodo/:id", fetchuser, async (req, res) => {
   try {
-    let note = await Note.findById(req.params.id);
-    if (!note) {
+    let todo = await todo.findById(req.params.id);
+    if (!todo) {
       return res.status(404).send("Not Found");
     }
-    if (note.user.toString() !== req.user.id) {
+    if (todo.user.toString() !== req.user.id) {
       return res.status(401).send("Not Allowed");
     }
-    note = await Note.findByIdAndDelete(req.params.id);
-    res.json({ Success: "Note has been deleted successfully", note: note });
+    todo = await todo.findByIdAndDelete(req.params.id);
+    res.json({ Success: "todo has been deleted successfully", todo: todo });
   } catch (error) {
     console.error(error.message);
     res.status(500).send("Internal Server Error");
